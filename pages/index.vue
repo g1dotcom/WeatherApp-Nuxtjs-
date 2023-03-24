@@ -1,11 +1,44 @@
 <template>
-  <div>
-    <h1>Weather App</h1>
-    <input type="text" v-model="city" />
-    <button @click="getWeatherInfo">Get Weather</button>
-    <div v-if="weather.weather">
-      <h2>{{ weather.name }}</h2>
-      <p>{{ weather.weather[0].description }}</p>
+  <div class="wrapper">
+    <div class="container main">
+      <div class="row">
+        <div class="col-md-8 side-image" v-if="weather.weather">
+          <div class="text">
+            <h2 class="text-center">
+              {{ weather.name }}
+            </h2>
+            <div v-if="weather.main">
+              <p>Temperature: {{ weather.main.temp }} °C</p>
+              <p>Humidity: {{ weather.main.humidity }}%</p>
+            </div>
+            <div v-if="weather.weather">
+              <p>
+                Weather: {{ weather.weather[0].main }}
+                <img
+                  :src="`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`"
+                  alt="weather icon"
+                />
+              </p>
+              <p>Description: {{ weather.weather[0].description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 right">
+          <form class="input-box" @submit.prevent="getWeatherInfo">
+            <header>Weather App</header>
+            <div class="input-field">
+              <input class="input" type="text" v-model="city" required />
+              <label>City Name</label>
+            </div>
+
+            <div class="input-field">
+              <input type="submit" class="submit" />
+            </div>
+            <div class="signin"></div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
