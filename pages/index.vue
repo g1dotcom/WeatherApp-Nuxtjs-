@@ -317,7 +317,7 @@ export default {
   methods: {
     getWeatherInfo() {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${this?.city}&appid=3320da48438dec85f7460ff6068efb7b`
+        `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=3320da48438dec85f7460ff6068efb7b`
       )
         .then((response) => response.json())
         .then((weather) => {
