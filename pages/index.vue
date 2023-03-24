@@ -64,6 +64,7 @@ export default {
         .then((response) => response.json())
         .then((weather) => {
           this.weather = weather;
+          this.weather.main.temp = Math.round(this.weather.main.temp - 273.15);
         });
     },
   },
