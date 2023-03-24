@@ -268,6 +268,11 @@
                 </svg>
                 Description: {{ weather.weather[0].description }}
               </p>
+              <div class="esimate" v-if="weather.weather">
+                <h1 class="esimate">
+                  Yarın {{ weather.name }} {{ esimateWeather() }}
+                </h1>
+              </div>
             </div>
           </div>
         </div>
@@ -296,24 +301,47 @@ export default {
   data() {
     return {
       city: "London",
-      weather: {},
+      weather: {
+        main: {
+          temp: 0,
+        },
+      },
     };
   },
 
   created() {
     this.getWeatherInfo();
+    this.esimateWeather();
   },
 
   methods: {
     getWeatherInfo() {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=3320da48438dec85f7460ff6068efb7b`
+        `https://api.openweathermap.org/data/2.5/weather?q=${this?.city}&appid=3320da48438dec85f7460ff6068efb7b`
       )
         .then((response) => response.json())
         .then((weather) => {
           this.weather = weather;
           this.weather.main.temp = Math.round(this.weather.main.temp - 273.15);
+        })
+        .catch((error) => {
+          if (this.city == "") {
+            alert("Lütfen şehir adı giriniz");
+          } else {
+            alert("Lütfen geçerli bir şehir adı giriniz");
+          }
         });
+    },
+    esimateWeather() {
+      if (this.weather.main.temp > 30) {
+        return "Çok sıcak(Ortalama 30°C üzerinde)";
+      } else if (this.weather.main.temp > 20) {
+        return "Ilık(Ortalama 30°C ile 20°C arasında)";
+      } else if (this.weather.main.temp > 10) {
+        return "Serin(Ortalama 20°C ile 10°C arasında)";
+      } else {
+        return "Çok soğuk(Ortalama 10°C altında)";
+      }
     },
   },
 };
