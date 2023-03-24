@@ -19,7 +19,7 @@
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
 }
 .side-image {
-  background-image: url("https://img.freepik.com/free-vector/blue-cloudy-daylight-background-weather-design_33099-512.jpg?w=1060&t=st=1679487945~exp=1679488545~hmac=f07f23ff0b9eb03a9fac3b14255c740c47f50a5e3e57daf3954ead7365690d02");
+  background-image: url("https://media.tenor.com/438H6u87JfsAAAAd/sky-clouds.gif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,6 +58,8 @@ i {
   font-weight: 700;
   text-align: center;
   margin-bottom: 45px;
+  color: #fff;
+  font-size: xx-large;
 }
 .input-field {
   display: flex;
@@ -65,6 +67,7 @@ i {
   position: relative;
   padding: 0 10px 0 10px;
 }
+
 .input {
   height: 45px;
   width: 100%;
@@ -74,6 +77,8 @@ i {
   outline: none;
   margin-bottom: 20px;
   color: #40414a;
+  color: #fff;
+  font-size: 25px;
 }
 .input-box .input-field label {
   position: absolute;
@@ -99,7 +104,7 @@ i {
   border: none;
   outline: none;
   height: 45px;
-  background: #ececec;
+  background: #f1f0f0;
   border-radius: 5px;
   transition: 0.4s;
 }
@@ -142,6 +147,27 @@ span a:hover {
   margin-top: 50px;
   width: 300px;
 }
+.card {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Gelen Hava durumlarına göre değişen fotoğraflar */
+.cloudy {
+  background-image: url("https://media.tenor.com/r0F3-kMPAtwAAAAd/moving-clouds-world-meteorological-day.gif");
+  /* Bulutlu hava durumu için arka plan resmi */
+}
+
+.rainy {
+  background-image: url("https://media.tenor.com/fMpUxSGdArwAAAAC/rain-background.gif");
+  /* Yağmurlu veya çiseli hava durumu için animasyonlu arka plan resmi */
+}
+
+.clear {
+  background-image: url("https://media.tenor.com/NgcCROn8fDQAAAAd/pouring-rain.gif");
+  /* Karlı hava durumu için arka plan resmi */
+}
+
+/* Responsive */
 
 @media only screen and (max-width: 768px) {
   .side-image {
