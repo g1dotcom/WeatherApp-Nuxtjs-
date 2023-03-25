@@ -1,4 +1,4 @@
-# Nuxt-Website1
+# WeatherApp(NuxtJS)
 
 ## Build Setup
 
