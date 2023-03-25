@@ -67,6 +67,11 @@ i {
   position: relative;
   padding: 0 10px 0 10px;
 }
+p:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.5s;
+}
 
 .input {
   height: 45px;
@@ -104,13 +109,14 @@ i {
   border: none;
   outline: none;
   height: 45px;
-  background: #f1f0f0;
+  background: rgba(37, 95, 156, 0.9);
   border-radius: 5px;
   transition: 0.4s;
+  color: #fff;
 }
 .submit:hover {
-  background: rgba(37, 95, 156, 0.9);
-  color: #fff;
+  background: white;
+  color: black;
 }
 .signin {
   text-align: center;
@@ -137,18 +143,30 @@ span a:hover {
   color: #fff;
 }
 .esimate {
-  position: absolute;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-size: 20px;
-  color: rgb(250, 250, 250);
+  color: #a7a6a6;
   font-weight: 700;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
   width: 300px;
 }
+.esimate-title {
+  font-size: 25px;
+  color: #d4cece;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 .card {
   background: rgba(0, 0, 0, 0.5);
+}
+.esimate:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.5s;
 }
 
 /* Gelen Hava durumlarına göre değişen fotoğraflar */
@@ -163,7 +181,7 @@ span a:hover {
 }
 
 .clear {
-  background-image: url("https://media.tenor.com/NgcCROn8fDQAAAAd/pouring-rain.gif");
+  background-image: url("https://media.tenor.com/ddzDqS20za0AAAAC/sunset-shimmer-sunsets.gif");
   /* Karlı hava durumu için arka plan resmi */
 }
 

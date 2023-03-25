@@ -284,9 +284,12 @@
                     Description: {{ weather.weather[0].description }}
                   </p>
                 </div>
-                <h1 class="esimate">
-                  Yarın {{ weather.name }} {{ esimateWeather() }}
-                </h1>
+                <div class="esimate">
+                  <span class="esimate-title">Next few days :</span>
+
+                  <span>{{ weather.name }} </span>
+                  <span> {{ esimateWeather() }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -348,13 +351,13 @@ export default {
     },
     esimateWeather() {
       if (this.weather.main.temp > 30) {
-        return "Çok sıcak(Ortalama 30°C üzerinde)";
+        return "Very Hot(Average 30°C and above)";
       } else if (this.weather.main.temp > 20) {
-        return "Ilık(Ortalama 30°C ile 20°C arasında)";
+        return "Warm(Average 20°C and above)";
       } else if (this.weather.main.temp > 10) {
-        return "Serin(Ortalama 20°C ile 10°C arasında)";
+        return "Cool(Average 10°C and above)";
       } else {
-        return "Çok soğuk(Ortalama 10°C altında)";
+        return "Very Cold(Average 10°C and below)";
       }
     },
     getWeatherClass() {
